@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1022796883284",
+    "project_id": "macropayprueba-10eb0",
+    "storage_bucket": "macropayprueba-10eb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022796883284:android:63a890cb147016fb7054c1",
+        "android_client_info": {
+          "package_name": "com.macropay.prueba"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXushA6kTjqskjyTE2GgDE0EMh39Qk8G8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
