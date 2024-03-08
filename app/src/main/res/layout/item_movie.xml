@@ -1,7 +1,8 @@
 <!-- item_movie.xml -->
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-android:id="@+id/cardView"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground"
@@ -19,6 +20,17 @@ android:focusable="true">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="24dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_movie_rate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_movie_rate"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_star_rate" />
 
     <ImageView
         android:id="@+id/iv_movie_portrait"
@@ -61,15 +73,15 @@ android:focusable="true">
         android:id="@+id/tv_movie_rate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Calificacion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_movie_desc" />
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_movie_desc"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

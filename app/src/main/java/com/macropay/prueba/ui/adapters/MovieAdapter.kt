@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.macropay.prueba.R
 import com.macropay.prueba.data.model.Movie
 import com.macropay.prueba.databinding.ItemMovieBinding
+import com.macropay.prueba.utils.Constants
 import com.squareup.picasso.Picasso
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -38,12 +39,12 @@ class MovieAdapter(private val movies: List<Movie>, private val onItemClickListe
             val formatNumber = df.format(movie.voteAverage)
 
             binding.tvMovieTitle.text = movie.title
-            binding.tvMovieDesc.text = movie.overview
+            binding.tvMovieDesc.text = movie.overview.ifEmpty { "No se encontro una descripcion" }
             binding.tvMovieRate.text = formatNumber.toString()
 
-            val urlImage = "https://image.tmdb.org/t/p/original"
+
             Picasso.get()
-                .load(urlImage + movie.posterPath)
+                .load(Constants().MOVIE_DB_IMAGE_URL + movie.posterPath)
                 .placeholder(R.drawable.ic_no_image)
                 .resize(600, 900)
                 .centerCrop()

@@ -20,6 +20,10 @@ class MainViewModel : ViewModel() {
     val navigateToHomeFragment: LiveData<Boolean>
         get() = _navigateToHomeFragment
 
+    // LiveData para manejar el estado de la validación
+    val validationStateEmail = MutableLiveData<ValidationState>()
+    val validationStatePassword = MutableLiveData<ValidationState>()
+
     fun onNavigateToSignUpFragment() {
         _navigateToSignUpFragment.value = true
     }
@@ -27,7 +31,6 @@ class MainViewModel : ViewModel() {
     fun onNavigationToSignUpComplete() {
         _navigateToSignUpFragment.value = false
     }
-
 
     fun onNavigateToHomeFragment() {
         _navigateToHomeFragment.value = true
@@ -37,35 +40,9 @@ class MainViewModel : ViewModel() {
         _navigateToHomeFragment.value = false
     }
 
+}
 
-    //----
-
-    fun login(email:String,password:String){
-        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener {
-            if (it.isSuccessful){
-                // Inicio de sesión exitoso
-                // Puedes realizar acciones adicionales aquí si es necesario
-
-            }else{
-                // Manejar el fallo en el inicio de sesión
-            }
-        }
-    }
-
-    fun signUp(email:String,password:String){
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener {
-                if (it.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "createUserWithEmail:success")
-                    val user = auth.currentUser
-                   // updateUI(user)
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "createUserWithEmail:failure", it.exception)
-                    //updateUI(null)
-                }
-            }
-    }
-
+sealed class ValidationState {
+    object Valid : ValidationState()
+    data class Invalid(val error: String) : ValidationState()
 }

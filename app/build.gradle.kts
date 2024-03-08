@@ -76,14 +76,10 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     implementation("com.squareup.picasso:picasso:2.71828")
 
+    implementation ("com.github.f0ris.sweetalert:library:1.5.6")
+
     //Corrutinas
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-
-    //dagger hilt
-    //implementation ("com.google.dagger:hilt-android:2.35")
-    //implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    //implementation("androidx.fragment:fragment-ktx:1.6.2")
-    //kapt("com.google.dagger:hilt-android-compiler:2.35")
 
     //Dagger-Hilt Dependencies
     implementation ("com.google.dagger:hilt-android:2.42")
@@ -96,9 +92,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation ("com.google.firebase:firebase-database")
 
-// Navegación
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.5.2")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.5.2")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

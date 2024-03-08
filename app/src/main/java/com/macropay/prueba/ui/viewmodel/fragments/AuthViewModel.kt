@@ -44,14 +44,17 @@ class AuthViewModel : ViewModel() {
         return false
     }
 
-    fun doSign() {
+    fun doSignIn() {
         _completeSignIn.value = true
     }
-    fun onSignComplete() {
+    fun onSignInComplete() {
         _completeSignIn.value = false
     }
 
-    fun onCompleteValidation() {
-        TODO("Not yet implemented")
+    fun doSignUp() {
+        _completeSignUp.value = true
+    }
+    fun onSignUpComplete() {
+        _completeSignUp.value = false
     }
 }
