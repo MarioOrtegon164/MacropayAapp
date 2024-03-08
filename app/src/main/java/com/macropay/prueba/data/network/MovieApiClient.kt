@@ -1,8 +1,6 @@
 package com.macropay.prueba.data.network
 
 import com.macropay.prueba.data.model.MovieModel
-import com.macropay.prueba.data.model.QouteModel
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 

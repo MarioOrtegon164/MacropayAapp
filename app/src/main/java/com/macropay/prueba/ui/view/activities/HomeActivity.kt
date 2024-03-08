@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.google.gson.Gson
 import com.macropay.prueba.data.model.Movie
-import com.macropay.prueba.data.repositories.MyRepository
+import com.macropay.prueba.data.repositories.MovieRepository
 import com.macropay.prueba.databinding.ActivityHomeBinding
 import com.macropay.prueba.ui.adapters.MovieAdapter
 import com.macropay.prueba.ui.viewmodel.HomeViewModel
@@ -24,7 +24,7 @@ class HomeActivity : AppCompatActivity(),MovieAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         homeBinding = ActivityHomeBinding.inflate(layoutInflater)
-        val repository = MyRepository()
+        val repository = MovieRepository()
         val viewModelFactory = MyViewModelFactory(repository)
 
         homeViewModel = ViewModelProvider(this, viewModelFactory)[HomeViewModel::class.java]

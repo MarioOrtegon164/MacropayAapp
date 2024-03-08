@@ -1,4 +1,4 @@
-package com.macropay.prueba.ui.viewmodel.fragments
+package com.macropay.prueba.ui.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

@@ -6,8 +6,8 @@ import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.macropay.prueba.databinding.ActivitySignUpBinding
-import com.macropay.prueba.ui.viewmodel.fragments.AuthViewModel
-import com.macropay.prueba.ui.viewmodel.fragments.SignUpViewModel
+import com.macropay.prueba.ui.viewmodel.AuthViewModel
+import com.macropay.prueba.ui.viewmodel.SignUpViewModel
 import com.macropay.prueba.utils.Utils
 
 class SignUpActivity : AppCompatActivity() {

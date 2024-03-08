@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 import com.macropay.prueba.databinding.ActivityMainBinding
-import com.macropay.prueba.ui.viewmodel.fragments.AuthViewModel
-import com.macropay.prueba.ui.viewmodel.fragments.MainViewModel
+import com.macropay.prueba.ui.viewmodel.AuthViewModel
+import com.macropay.prueba.ui.viewmodel.MainViewModel
 import com.macropay.prueba.utils.Utils
 
 class MainActivity : AppCompatActivity() {

@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.macropay.prueba.data.model.DetailMovieModel
-import com.macropay.prueba.data.repositories.MyRepository
+import com.macropay.prueba.data.repositories.MovieRepository
 
-class DetailMovieViewModel(private val repository: MyRepository) : ViewModel() {
+class DetailMovieViewModel(private val repository: MovieRepository) : ViewModel() {
 
     private val _dataList = MutableLiveData<DetailMovieModel>()
     val dataList: LiveData<DetailMovieModel> get() = _dataList

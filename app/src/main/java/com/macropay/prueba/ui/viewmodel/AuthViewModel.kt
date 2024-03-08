@@ -1,4 +1,4 @@
-package com.macropay.prueba.ui.viewmodel.fragments
+package com.macropay.prueba.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

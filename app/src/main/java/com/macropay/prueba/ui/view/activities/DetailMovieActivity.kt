@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.gson.Gson
 import com.macropay.prueba.R
 import com.macropay.prueba.data.model.Movie
-import com.macropay.prueba.data.repositories.MyRepository
+import com.macropay.prueba.data.repositories.MovieRepository
 import com.macropay.prueba.databinding.ActivityDetailMovieBinding
 import com.macropay.prueba.ui.viewmodel.DetailMovieViewModel
 import com.macropay.prueba.ui.viewmodel.MyViewModelFactory
@@ -29,7 +29,7 @@ class DetailMovieActivity : AppCompatActivity() {
         fragmentDetailMovieBinding = ActivityDetailMovieBinding.inflate(layoutInflater)
         setContentView(fragmentDetailMovieBinding.root)
 
-        val repository = MyRepository()
+        val repository = MovieRepository()
         val viewModelFactory = MyViewModelFactory(repository)
         detailMovieViewModel = ViewModelProvider(this,viewModelFactory)[DetailMovieViewModel::class.java]
 
@@ -69,11 +69,10 @@ class DetailMovieActivity : AppCompatActivity() {
             fragmentDetailMovieBinding.ivArrowBack.setOnClickListener {
                 this.finish()
             }
-
         }
 
         detailMovieViewModel.errorMessage.observe(this) { errorMessage ->
-            // Maneja el error, muestra un mensaje al usuario, etc.
+            Utils().showErrorDialog(this,errorMessage.toString())
         }
         detailMovieViewModel.getMovieDetail(Constants().MOVIE_DB_API_KEY,movie.id)
     }

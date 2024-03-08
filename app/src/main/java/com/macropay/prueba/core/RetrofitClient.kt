@@ -1,6 +1,7 @@
 package com.macropay.prueba.core
 
 import com.macropay.prueba.data.network.ApiService
+import com.macropay.prueba.utils.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -8,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private const val BASE_URL = "https://api.themoviedb.org/3/"
+
 
     val instance: ApiService by lazy {
         val loggingInterceptor = HttpLoggingInterceptor().apply {
@@ -20,7 +21,7 @@ object RetrofitClient {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(Constants().BASE_URL)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

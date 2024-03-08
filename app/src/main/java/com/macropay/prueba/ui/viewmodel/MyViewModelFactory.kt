@@ -2,9 +2,9 @@ package com.macropay.prueba.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.macropay.prueba.data.repositories.MyRepository
+import com.macropay.prueba.data.repositories.MovieRepository
 
-class MyViewModelFactory(private val repository: MyRepository) : ViewModelProvider.Factory {
+class MyViewModelFactory(private val repository: MovieRepository) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
