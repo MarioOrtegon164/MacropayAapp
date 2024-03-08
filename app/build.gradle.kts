@@ -70,8 +70,11 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
 
     // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+    implementation("com.squareup.picasso:picasso:2.71828")
 
     //Corrutinas
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
@@ -90,19 +93,12 @@ dependencies {
     //firebase
     implementation(platform("com.google.firebase:firebase-bom:32.7.3"))
     implementation("com.google.firebase:firebase-analytics")
-//    implementation ("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation ("com.google.firebase:firebase-database")
 
 // Navegación
     implementation ("androidx.navigation:navigation-fragment-ktx:2.5.2")
     implementation ("androidx.navigation:navigation-ui-ktx:2.5.2")
-
-
-    //def nav_version = "2.1.0-alpha05"
-    //implementation "androidx.navigation:navigation-fragment:$nav_version" // For Kotlin use navigation-fragment-ktx
-    //implementation "androidx.navigation:navigation-ui:$nav_version" // For Kotlin use navigation-ui-ktx
-
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

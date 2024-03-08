@@ -1,10 +1,16 @@
 package com.macropay.prueba.data.network
 
 import com.macropay.prueba.data.model.MovieModel
+import com.macropay.prueba.data.model.QouteModel
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface MovieApiClient {
-    @GET("3/movie/now_playing")
-    suspend fun getAllQuotes(): Response<List<MovieModel>>
+    @GET("movie/now_playing")
+    suspend fun getMovies(
+        @Query("api_key") apiKey: String,
+        @Query("page") page: Int
+    ): MovieModel
+
 }

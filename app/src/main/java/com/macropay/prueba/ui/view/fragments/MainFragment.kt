@@ -45,12 +45,19 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private fun setupObservers() {
 
-
-        viewModel.navigateToSecondFragment.observe(viewLifecycleOwner) { shouldNavigate ->
+        viewModel.navigateToSignUpFragment.observe(viewLifecycleOwner) { shouldNavigate ->
             if (shouldNavigate) {
-                navigateToSecondFragment()
+                navigateToFragment(R.id.action_mainFragment_to_signUpFragment)
                 // Resetear el estado de navegación en el ViewModel
-                viewModel.onNavigationComplete()
+                viewModel.onNavigationToSignUpComplete()
+            }
+        }
+
+        viewModel.navigateToHomeFragment.observe(viewLifecycleOwner) { shouldNavigate ->
+            if (shouldNavigate) {
+                navigateToFragment(R.id.action_mainFragment_to_homeFragment)
+                // Resetear el estado de navegación en el ViewModel
+                viewModel.onNavigationToHomeComplete()
             }
         }
 
@@ -60,6 +67,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     if (success) {
                         // Navegar a la pantalla de inicio
                         Toast.makeText(context, "Firebase login chido", Toast.LENGTH_LONG).show()
+                        viewModel.onNavigateToHomeFragment()
                     } else {
                         // Mostrar mensaje de error
                         Toast.makeText(context, "Error en login de firebase", Toast.LENGTH_LONG).show()
@@ -81,16 +89,18 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         val navigateButton = mainFragmentBinding.btnSignUp
         navigateButton.setOnClickListener {
-            viewModel.onNavigateToSecondFragment()
+            viewModel.onNavigateToSignUpFragment()
         }
+
     }
 
-    private fun navigateToSecondFragment() {
+    private fun navigateToFragment(fragmentId:Int) {
         try {
-            findNavController().navigate(R.id.action_mainFragment_to_signUpFragment)
+            findNavController().navigate(fragmentId)
 
         }catch (e:Exception){
             Log.d(TAG, e.toString())
         }
     }
+
 }

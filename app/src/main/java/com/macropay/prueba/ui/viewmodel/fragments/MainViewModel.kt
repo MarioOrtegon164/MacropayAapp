@@ -1,7 +1,6 @@
 package com.macropay.prueba.ui.viewmodel.fragments
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,17 +12,31 @@ class MainViewModel : ViewModel() {
     private val TAG = "MainViewModel"
 
     // Lógica de navegación utilizando LiveData
-    private val _navigateToSecondFragment = MutableLiveData<Boolean>()
-    val navigateToSecondFragment: LiveData<Boolean>
-        get() = _navigateToSecondFragment
+    private val _navigateToSignUpFragment = MutableLiveData<Boolean>()
+    val navigateToSignUpFragment: LiveData<Boolean>
+        get() = _navigateToSignUpFragment
 
-    fun onNavigateToSecondFragment() {
-        _navigateToSecondFragment.value = true
+    private val _navigateToHomeFragment = MutableLiveData<Boolean>()
+    val navigateToHomeFragment: LiveData<Boolean>
+        get() = _navigateToHomeFragment
+
+    fun onNavigateToSignUpFragment() {
+        _navigateToSignUpFragment.value = true
     }
 
-    fun onNavigationComplete() {
-        _navigateToSecondFragment.value = false
+    fun onNavigationToSignUpComplete() {
+        _navigateToSignUpFragment.value = false
     }
+
+
+    fun onNavigateToHomeFragment() {
+        _navigateToHomeFragment.value = true
+    }
+
+    fun onNavigationToHomeComplete() {
+        _navigateToHomeFragment.value = false
+    }
+
 
     //----
 
